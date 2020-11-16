@@ -29,4 +29,14 @@ describe('Gilded Rose', function () {
         expect(itemsUpdated[0].quality).to.equal(0);
     });
 
+    it("should not update quality when the name is Sulfuras, Hand of Ragnaros ", function() {
+        // Given
+        const gildedRose = new GildedRose([new Item('Sulfuras, Hand of Ragnaros', 0, 1)]);
+
+        // When
+        const itemsUpdated = gildedRose.updateQuality();
+        // Then
+        expect(itemsUpdated[0].quality).to.not.change;
+    });
+
 });
