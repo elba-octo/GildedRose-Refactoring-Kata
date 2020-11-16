@@ -39,4 +39,14 @@ describe('Gilded Rose', function () {
         expect(itemsUpdated[0].quality).to.not.change;
     });
 
+    it("should increase the quality by 1 when the name is Aged Brie ", function() {
+        // Given
+        const gildedRose = new GildedRose([new Item('Aged Brie', 1, 1)]);
+
+        // When
+        const itemsUpdated = gildedRose.updateQuality();
+        // Then
+        expect(itemsUpdated[0].quality).to.equal(2);
+    });
+
 });
