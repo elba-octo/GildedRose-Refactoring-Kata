@@ -5,7 +5,7 @@ describe('Gilded Rose', function () {
 
     it('should foo', function () {
         const gildedRose = new GildedRose([new Item('foo', 0, 0)]);
-        const items = gildedRose.updateQuality();
+        const items = gildedRose.updateItem();
         expect(items[0].name).to.equal('foo');
     });
 
@@ -14,7 +14,7 @@ describe('Gilded Rose', function () {
         const gildedRose = new GildedRose([new Item('lala', 0, 1)]);
 
         // When
-        const itemsUpdated = gildedRose.updateQuality();
+        const itemsUpdated = gildedRose.updateItem();
         // Then
         expect(itemsUpdated[0].quality).to.equal(0);
     });
@@ -24,7 +24,7 @@ describe('Gilded Rose', function () {
         const gildedRose = new GildedRose([new Item('lala', 0, 0)]);
 
         // When
-        const itemsUpdated = gildedRose.updateQuality();
+        const itemsUpdated = gildedRose.updateItem();
         // Then
         expect(itemsUpdated[0].quality).to.equal(0);
     });
@@ -34,7 +34,7 @@ describe('Gilded Rose', function () {
         const gildedRose = new GildedRose([new Item('Sulfuras, Hand of Ragnaros', 0, 1)]);
 
         // When
-        const itemsUpdated = gildedRose.updateQuality();
+        const itemsUpdated = gildedRose.updateItem();
         // Then
         expect(itemsUpdated[0].quality).to.not.change;
     });
@@ -44,7 +44,7 @@ describe('Gilded Rose', function () {
         const gildedRose = new GildedRose([new Item('Aged Brie', 1, 1)]);
 
         // When
-        const itemsUpdated = gildedRose.updateQuality();
+        const itemsUpdated = gildedRose.updateItem();
         // Then
         expect(itemsUpdated[0].quality).to.equal(2);
     });
@@ -54,7 +54,7 @@ describe('Gilded Rose', function () {
         const gildedRose = new GildedRose([new Item('Aged Brie', 1, 50)]);
 
         // When
-        const itemsUpdated = gildedRose.updateQuality();
+        const itemsUpdated = gildedRose.updateItem();
         // Then
         expect(itemsUpdated[0].quality).to.equal(50);
     });
@@ -64,7 +64,7 @@ describe('Gilded Rose', function () {
         const gildedRose = new GildedRose([new Item('Backstage passes to a TAFKAL80ETC concert', 10, 1)]);
 
         // When
-        const itemsUpdated = gildedRose.updateQuality();
+        const itemsUpdated = gildedRose.updateItem();
         // Then
         expect(itemsUpdated[0].quality).to.equal(3);
     })
@@ -74,7 +74,7 @@ describe('Gilded Rose', function () {
         const gildedRose = new GildedRose([new Item('Backstage passes to a TAFKAL80ETC concert', 5, 1)]);
 
         // When
-        const itemsUpdated = gildedRose.updateQuality();
+        const itemsUpdated = gildedRose.updateItem();
         // Then
         expect(itemsUpdated[0].quality).to.equal(4);
     })
@@ -84,7 +84,7 @@ describe('Gilded Rose', function () {
         const gildedRose = new GildedRose([new Item('Backstage passes to a TAFKAL80ETC concert', 5, 48)]);
 
         // When
-        const itemsUpdated = gildedRose.updateQuality();
+        const itemsUpdated = gildedRose.updateItem();
         // Then
         expect(itemsUpdated[0].quality).to.equal(50);
     });
@@ -94,7 +94,7 @@ describe('Gilded Rose', function () {
         const gildedRose = new GildedRose([new Item('Backstage passes to a TAFKAL80ETC concert', -1, 48)]);
 
         // When
-        const itemsUpdated = gildedRose.updateQuality();
+        const itemsUpdated = gildedRose.updateItem();
         // Then
         expect(itemsUpdated[0].quality).to.equal(0);
     });
@@ -104,7 +104,7 @@ describe('Gilded Rose', function () {
         const gildedRose = new GildedRose([new Item('lala', 5, 10)]);
 
         // When
-        const itemsUpdated = gildedRose.updateQuality();
+        const itemsUpdated = gildedRose.updateItem();
         // Then
         expect(itemsUpdated[0].sellIn).to.equal(4);
     });
@@ -114,7 +114,7 @@ describe('Gilded Rose', function () {
         const gildedRose = new GildedRose([new Item('Sulfuras, Hand of Ragnaros', 5, 80)]);
 
         // When
-        const itemsUpdated = gildedRose.updateQuality();
+        const itemsUpdated = gildedRose.updateItem();
         // Then
         expect(itemsUpdated[0].sellIn).to.equal(5);
     });
@@ -124,7 +124,7 @@ describe('Gilded Rose', function () {
         const gildedRose = new GildedRose([new Item('Sulfuras, Hand of Ragnaros', 5, 80)]);
 
         // When
-        const itemsUpdated = gildedRose.updateQuality();
+        const itemsUpdated = gildedRose.updateItem();
         // Then
         expect(itemsUpdated[0].quality).to.equal(80);
     });
@@ -134,7 +134,7 @@ describe('Gilded Rose', function () {
         const gildedRose = new GildedRose([new Item('lala', -1, 10)]);
 
         // When
-        const itemsUpdated = gildedRose.updateQuality();
+        const itemsUpdated = gildedRose.updateItem();
         // Then
         expect(itemsUpdated[0].quality).to.equal(8);
     });
@@ -144,7 +144,7 @@ describe('Gilded Rose', function () {
         const gildedRose = new GildedRose([new Item('Aged Brie', -1, 48)]);
 
         // When
-        const itemsUpdated = gildedRose.updateQuality();
+        const itemsUpdated = gildedRose.updateItem();
         // Then
         expect(itemsUpdated[0].quality).to.equal(50);
     });
@@ -154,7 +154,7 @@ describe('Gilded Rose', function () {
         const gildedRose = new GildedRose([new Item('Aged Brie', -1, 50)]);
 
         // When
-        const itemsUpdated = gildedRose.updateQuality();
+        const itemsUpdated = gildedRose.updateItem();
         // Then
         expect(itemsUpdated[0].quality).to.equal(50);
     });
